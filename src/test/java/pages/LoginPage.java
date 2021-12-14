@@ -18,12 +18,12 @@ public class LoginPage extends BasePage {
         return isExist(LOGIN_BUTTON);
     }
 
-    public LoginPage open(){
+    public LoginPage open() {
         driver.get(BASE_URL);
         return this;
     }
 
-    public HomePage login(String userName, String password){
+    public HomePage login(String userName, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(userName);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).click();
