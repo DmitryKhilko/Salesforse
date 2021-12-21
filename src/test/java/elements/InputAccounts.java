@@ -3,7 +3,7 @@ package elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Input {
+public class InputAccounts {
 
     String inputLocator = "//div[contains(@class, 'modal-body')]//span[text()='%s']/ancestor::div[contains(@class, 'uiInput')]//input";
     String inputLocatorDescription = "//div[contains(@class, 'modal-body')]//span[text()='%s']/ancestor::div[contains(@class, 'uiInput')]//textarea";
@@ -11,7 +11,7 @@ public class Input {
     WebDriver driver;
     String label;
 
-    public Input(WebDriver driver, String label) {
+    public InputAccounts(WebDriver driver, String label) {
         this.driver = driver;
         this.label = label;
     }
