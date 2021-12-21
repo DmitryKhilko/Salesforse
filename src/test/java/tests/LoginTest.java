@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
@@ -7,11 +8,18 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
 
-    @Test(description = "Вход в приложение Salesforse с валидными параметрами", priority = 1)
-    public void login() {
+    @DataProvider (name = "loginData")
+    public Object[][] loginData(){
+        return new Object[][] {
+            {"dmitrykhilko-qyxj@force.com", "12qwasXZ"}
+        };
+    }
+
+    @Test(description = "Вход в приложение Salesforse с валидными параметрами", priority = 1, dataProvider = "loginData")
+    public void login(String userName, String password) {
         boolean isHomePageOpened = loginPage
                 .open()
-                .login("dmitrykhilko-qyxj@force.com", "12qwasXZ")
+                .login(userName, password)
                 .isPageOpen();
 
         assertTrue(isHomePageOpened, "Страница HomePage не открылась");

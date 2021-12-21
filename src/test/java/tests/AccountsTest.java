@@ -26,7 +26,6 @@ public class AccountsTest extends BaseTest {
                 "РБ", "ул. Маяковского, 15", "г. Минск", "Московский",
                 "222222", "РБ");
 
-
         boolean isDetailsPageOpen = accountModalPage
                 .create(account)
                 .isPageOpen();
