@@ -7,7 +7,11 @@ import tests.base.BaseTest;
 import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
-
+    // Вопрос: Что делать, если в тесте используется несколько разных наборов тестовых данных,
+    // как в AccountsTest и ContactsTest?
+    // Ответ Коли: Мы передаём в тест String userName, String password.
+    //Можем передавать Credentials cred, Account testAccount
+    //где Credentials и Account, это объекты классов, которые мы сами придумали и описали.
     @DataProvider (name = "loginData")
     public Object[][] loginData(){
         return new Object[][] {

@@ -1,6 +1,7 @@
 package tests;
 
 import models.Account;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
@@ -8,6 +9,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class AccountsTest extends BaseTest {
+
     @Test(description = "Создание нового аккаунта  с валидными параметрами", priority = 2)
     public void accountCreation() {
         loginPage
