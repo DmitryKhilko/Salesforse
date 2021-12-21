@@ -7,6 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
     public static final String BASE_URL = "https://ivc2.lightning.force.com";
+    public static final By NEW_BUTTON = By.xpath("//a[@title='New']");
+    public static final By BREADCRUMBS_LABEL = By.xpath("//nav[@aria-label='Breadcrumbs']//span");
+    public static final By SAVE_BUTTON = By.xpath("//button[@title='Save']");
+    public static final By SAVE_CONTACT_BUTTON = By.xpath("//button[@name='SaveEdit']");
 
     WebDriver driver;
     WebDriverWait wait;
@@ -18,10 +22,10 @@ public abstract class BasePage {
 
     public abstract boolean isPageOpen();
 
-    protected boolean isExist(By locator){
+    protected boolean isExist(By locator) {
         try {
             return driver.findElement(locator).isDisplayed();
-        } catch (NoSuchElementException ex){
+        } catch (NoSuchElementException ex) {
             System.out.println(">>> !!! " + ex.getMessage());
             return false;
         }
