@@ -1,8 +1,10 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class AccountsDetailsPage extends BasePage {
 
     public static final By DETAILS_LINK = By.xpath("//a[@id='detailTab__item']");
@@ -18,6 +20,8 @@ public class AccountsDetailsPage extends BasePage {
 
     @Override
     public boolean isPageOpen() {
+        log.debug("Переходим на страницу AccountsDetailsPage");
+        driver.findElement(DETAILS_LINK).click();
         return isExist(DETAILS_LINK);
     }
 
@@ -37,11 +41,11 @@ public class AccountsDetailsPage extends BasePage {
         return driver.findElement(By.xpath(String.format(vieldEmployeesValue, fieldName))).getText();
     }
 
-    public String getFieldAnnualRevenueValueByName(String fieldName) {
-        String s = driver.findElement(By.xpath(String.format(vieldValue, fieldName))).getText();
-        //Значение вида $1,000,000 приводим к виду 1000000
-        return s.replaceAll("[,$]", "");
-    }
+//    public String getFieldAnnualRevenueValueByName(String fieldName) {
+//        String s = driver.findElement(By.xpath(String.format(vieldValue, fieldName))).getText();
+//        //Значение вида $1,000,000 приводим к виду 1000000
+//        return s.replaceAll("[,$]", "");
+//    }
 
     public String getFieldAdressValueByName(String fieldName) {
         return driver.findElement(By.xpath(String.format(vieldAdressValue, fieldName))).getText();

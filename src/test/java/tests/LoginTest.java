@@ -15,7 +15,7 @@ public class LoginTest extends BaseTest {
     @DataProvider (name = "loginData")
     public Object[][] loginData(){
         return new Object[][] {
-            {"dmitrykhilko-qyxj@force.com", "12qwasXZ"}
+            {"dmitrykhilko-ulle@force.com", "12qwasXZ"}
         };
     }
 

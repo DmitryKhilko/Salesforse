@@ -24,13 +24,11 @@ public class AccountsModalPage extends BasePage {
         new InputAccounts(driver, "Account Name").write(account.getAccountName());
         new DropDownFindAccounts(driver, "Parent Account").selectOptionFind(account.getParentAccount());
         new InputAccounts(driver, "Phone").write(account.getPhone());
-        new InputAccounts(driver, "Fax").write(account.getFax());
         new InputAccounts(driver, "Website").write(account.getWebSite());
 
         new DropDownAccounts(driver, "Type").selectOption(account.getType());
         new DropDownAccounts(driver, "Industry").selectOption(account.getIndustry());
         new InputAccounts(driver, "Employees").write(account.getEmployees());
-        new InputAccounts(driver, "Annual Revenue").write(account.getAnnualRevenue());
         new InputAccounts(driver, "Description").writeDescription(account.getDescription());
 
         new InputAccounts(driver, "Billing Street").writeDescription(account.getBillingStreet());
